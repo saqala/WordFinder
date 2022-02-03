@@ -1,10 +1,10 @@
 package com.homagame;
 
 public class StringHelper {
-    private String text;
+    private final String text;
 
     public StringHelper(String text) {
-        this.text = text;
+        this.text = text == null ? "" : text;
     }
 
     public long numberOfOccurrence(char c) {

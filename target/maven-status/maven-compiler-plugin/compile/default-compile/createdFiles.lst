@@ -1,3 +1,4 @@
+com/homagame/exception/WordFinderException.class
 com/homagame/WordFinder.class
 com/homagame/TaskWordFinder.class
 com/homagame/StringHelper.class

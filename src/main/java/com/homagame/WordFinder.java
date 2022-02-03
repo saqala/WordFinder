@@ -1,5 +1,7 @@
 package com.homagame;
 
+import com.homagame.exception.WordFinderException;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -13,7 +15,6 @@ import java.util.stream.Collectors;
 
 public class WordFinder {
 
-    public static final String THE_INJECTED_WORD_IS_NOT_CORRECT = "the injected word is not correct";
     Logger LOGGER = Logger.getLogger(WordFinder.class.getName());
     private List<String> ListOfWords;
 
@@ -39,7 +40,7 @@ public class WordFinder {
 
     private void validate(String word) {
         if(word == null || word.length() > 12 || !word.matches("[a-z]+")){
-            throw new RuntimeException(THE_INJECTED_WORD_IS_NOT_CORRECT);
+            throw WordFinderException.create(String.format(WordFinderException.THE_INJECTED_WORD_IS_NOT_CORRECT, word));
         }
     }
 
